@@ -1,0 +1,59 @@
+<div class="container">
+  <h1>Hello Angular</h1>
+  <p
+    appStyle
+    [dStyles]="{
+      border: '1px solid orange',
+      color: 'yellow',
+      background: 'blue',
+      borderRadius: '5px'
+    }"
+  >
+    Learn information about @Directive
+  </p>
+  <p
+    appStyle
+    [dStyles]="{
+      border: '2px solid navy',
+      color: 'green',
+      background: 'pink',
+      borderRadius: '15px'
+    }"
+  >
+    Learn information about @Directive
+  </p>
+  <app-post-form (onAdd)="updatePost($event)"></app-post-form>
+  <app-post
+    *ngFor="let post of posts"
+    [item]="post"
+    (onRemove)="removePost($event)"
+  ></app-post>
+  <app-counter
+    (counterChange)="resultCounter($event)"
+    [(counter)]="startNum"
+  ></app-counter>
+  <!-- <app-counter1 #counter1></app-counter1>
+  <button (click)="counter1.increment()">+</button>
+  <button (click)="counter1.decrement()">-</button> -->
+  <app-counter2 [firstName]="name"></app-counter2>
+  <button (click)="increment()">Plus</button>
+  <button (click)="decrement()">Minus</button>
+
+  <div class="globalService">
+    <h3>
+      TEST GLOBAL SERVICES
+      <p>{{ countService.counter }}</p>
+    </h3>
+    <button (click)="countService.increment()">+++</button>
+    <button (click)="countService.decrement()">---</button>
+  </div>
+  <div class="localService">
+    <h3>
+      TEST Local SERVICES
+      <p>{{ localCountService.counter }}</p>
+    </h3>
+    <button (click)="localCountService.increment()">+++</button>
+    <button (click)="localCountService.decrement()">---</button>
+  </div>
+  <app-counter3></app-counter3>
+</div>

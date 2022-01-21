@@ -1,0 +1,17 @@
+<div class="globalService">
+  <h3>
+    TEST Global SERVICES
+    <p>{{ countService.counter }}</p>
+  </h3>
+  <button (click)="countService.increment()">+++</button>
+  <button (click)="countService.decrement()">---</button>
+</div>
+
+<div class="localService">
+  <h3>
+    TEST LOCAL SERVICES
+    <p>{{ localCountService.counter }}</p>
+  </h3>
+  <button (click)="localCountService.increment()">+++</button>
+  <button (click)="localCountService.decrement()">---</button>
+</div>

@@ -1,0 +1,42 @@
+<div class="card">
+  <h2>{{ title }}</h2>
+  <input type="text" placeholder="name" [(ngModel)]="name" />
+  <input type="text" placeholder="surname" [(ngModel)]="surname" />
+  <button [disabled]="disabled" (click)="disabledButton()">Click Me!</button>
+  <button (click)="activButton()">Active Button</button>
+  <p>
+    <strong>Hello {{ name | uppercase }}</strong>
+  </p>
+  <p>
+    <strong>Hello {{ surname | uppercase }}</strong>
+  </p>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, iure?
+  </p>
+
+  <p><button (click)="changeStyle()">Toggle</button></p>
+  <div
+    [ngStyle]="{
+      width: '150px',
+      height: '150px',
+      border: '2px solid black',
+      borderRadius: '8px',
+      background: toggle ? 'navy' : 'yellow'
+    }"
+  ></div>
+
+  <div *ngIf="toggle; else navy" class="orange">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti
+    omnis reiciendis ut quos.
+    <p><strong>Show Orange Content</strong></p>
+  </div>
+
+  <ng-template #navy>
+    <div class="navy">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti
+      omnis reiciendis ut quos.
+      <p><strong>Show Navy Content</strong></p>
+    </div>
+  </ng-template>
+</div>
