@@ -1,0 +1,40 @@
+<app-child [userNames]="names" [template]="appRef">
+  <h3 class="test">HEllo Angular {{ test }}</h3>
+  <h3 class="test2">HEllo Angular {{ test2 }}</h3>
+  <p>TEst Paragraph</p>
+  <footer>FOOTER</footer>
+</app-child>
+<ng-template #appRef let-item>
+  <p>{{ item }}) HEllo I am App Template</p>
+</ng-template>
+
+<!-- <ng-template #sayHello [ngIf]="sayHello"> <p>Hello</p> </ng-template>
+<ng-template *ngIf="sayHello; then sayBye"> </ng-template>
+<ng-template #sayBye> <p>Bye</p> </ng-template> -->
+<hr />
+<div
+  *ngFor="
+    let item of [
+      { name: 'vasa', id: 2 },
+      { name: 'petro', id: 6 },
+      { name: 'vasa' },
+      { name: 'hyilo', id: 99 }
+    ]
+  "
+>
+  <div *ngIf="item.id">{{ item.name }}</div>
+</div>
+
+<hr />
+<ng-container
+  *ngFor="
+    let item of [
+      { name: 'vasa', id: 2 },
+      { name: 'petro', id: 6 },
+      { name: 'vasa' },
+      { name: 'hyilo', id: 99 }
+    ]
+  "
+>
+  <div *ngIf="item.id">{{ item.name }}</div></ng-container
+>

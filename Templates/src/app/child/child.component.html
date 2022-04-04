@@ -1,0 +1,34 @@
+<ng-content select=".test"></ng-content>
+<ng-content select=".test2"></ng-content>
+<p>child works!</p>
+<ng-content select="p"></ng-content>
+<hr />
+<ng-content></ng-content>
+
+<h2 *MyngIf>TEST DRECTIVE NGIF</h2>
+<!-- <ng-template #ref let-foo="foo" let-t2="t2" let-prefix>
+  <p>{{ prefix }}I am NGTemplate {{ foo }} {{ t2 }} {{ userNames }}</p>
+</ng-template>
+
+<ng-container
+  *ngTemplateOutlet="
+    ref;
+    context: { foo: 123, t: 345, t2: 'dfdf', $implicit: 'Hello' }
+  "
+></ng-container>
+<ng-container *ngIf="true">
+  <div *ngFor="let name of userNames">{{ name }}</div>
+</ng-container> -->
+
+<ng-template #defaultTemplate let-item>
+  <p>{{ item }}-I am defaultTemplate</p>
+</ng-template>
+
+<div *ngFor="let item of [1, 2, 3]">
+  <ng-container
+    *ngTemplateOutlet="
+      template || defaultTemplate;
+      context: { $implicit: item }
+    "
+  ></ng-container>
+</div>
