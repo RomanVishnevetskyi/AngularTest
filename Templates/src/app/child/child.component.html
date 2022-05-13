@@ -6,7 +6,8 @@
 <ng-content></ng-content>
 
 <h2 *MyngIf>TEST DRECTIVE NGIF</h2>
-<!-- <ng-template #ref let-foo="foo" let-t2="t2" let-prefix>
+
+<ng-template #ref let-foo="foo" let-t2="t2" let-prefix>
   <p>{{ prefix }}I am NGTemplate {{ foo }} {{ t2 }} {{ userNames }}</p>
 </ng-template>
 
@@ -16,11 +17,12 @@
     context: { foo: 123, t: 345, t2: 'dfdf', $implicit: 'Hello' }
   "
 ></ng-container>
-<ng-container *ngIf="true">
+
+<!-- <ng-container *ngIf="true">
   <div *ngFor="let name of userNames">{{ name }}</div>
 </ng-container> -->
 
-<ng-template #defaultTemplate let-item>
+<!-- <ng-template #defaultTemplate let-item>
   <p>{{ item }}-I am defaultTemplate</p>
 </ng-template>
 
@@ -31,4 +33,4 @@
       context: { $implicit: item }
     "
   ></ng-container>
-</div>
+</div> -->
